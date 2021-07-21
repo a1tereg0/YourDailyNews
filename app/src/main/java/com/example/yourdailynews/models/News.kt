@@ -7,8 +7,21 @@ import java.util.*
 
 
 @JsonClass(generateAdapter = true)
+data class NewsList(
+//    @Json(name = articles)
+    var articles: List<NewsItem>){
+
+    fun getNews(): List<NewsItem> {
+
+        return articles
+    }
+}
+
+
+@JsonClass(generateAdapter = true)
 data class NewsItem (
     var author: String,
     var title: String,
     var description: String
-        )
+)
+
